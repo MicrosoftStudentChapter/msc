@@ -1,0 +1,512 @@
+{% extends 'src/base.html' %}
+{% load staticfiles %}
+{% block css %}
+<!-- fonts -->
+<link href="//fonts.googleapis.com/css?family=Cinzel:400,700,900" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+<!-- /fonts -->
+<!-- css -->
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'css/gallery.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'css/jQuery.lightninBox.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'css/aos.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <!--Custom Styles-->
+    <style>
+        #navbar1 {
+            background-color: #333;
+            position: fixed;
+            top: -50px;
+            width: 100%;
+            display:block;
+            transition: top 0.3s;
+            z-index: 500;
+        }
+
+        #navbar1 a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        #navbar1 a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .alert{
+    text-align: center;
+    padding: 10px;
+    background: #52da1a;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+    display: none;
+}
+
+        .event-w3l1-img{
+            position: relative;
+            float: left;
+            width: auto;
+            height: 250px;
+            background-position: 50% 50%;
+            background-repeat:   no-repeat;
+            background-size:     cover;
+        }
+
+    </style>
+    <!--w3 schools stylesheet-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        .mySlides {display:none;}
+    </style>
+    <style>
+        .team-w3l1-img{
+            position: relative;
+            width: 250px;
+            height: 250px;
+            background-position: 50% 50%;
+            background-repeat:   no-repeat;
+            background-size:     cover;
+            display: block;
+        }
+        .social-auth-icon{
+            position: relative;
+            float: left;
+            height: 80px;
+            width: auto;
+            align-items: center;
+            background-position: 50% 50%;
+            background-repeat:   no-repeat;
+            background-size:     cover;
+        }
+
+        .gallery-img{
+            position: relative;
+            float: left;
+            width: 250px;
+            height: 250px;
+            background-position: 50% 50%;
+            background-repeat:   no-repeat;
+            background-size:     cover;
+        }
+    </style>
+    <style>
+        @media only screen and (max-width: 1026px) {
+            .hidingNav {
+                display: none;
+            }
+        }
+    </style>
+<!-- /css -->
+<!-- js -->
+<script src="{% static 'js/modernizr.min.js' %}"></script>
+
+
+<!-- /js -->
+{% endblock %}
+
+{% block body %}
+<!--Hiding Navbar-->
+<!--<div id="navbar1">-->
+    <!--<a href="index.html" class="page-scroll">Home</a>-->
+    <!--<a href="#about" class="page-scroll">About</a>-->
+    <!--<a href="#service" class="page-scroll">Events</a>-->
+    <!--<a href="#gallery" class="page-scroll">Gallery</a>-->
+    <!--<a href="#team" class="page-scroll">Team</a>-->
+    <!--<a href="#contact" class="page-scroll">Contact</a>-->
+<!--</div>-->
+<div class="navbar-wrapper hidingNav">
+    <div class="container">
+        <nav class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button style="float: right !important;" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div id="navbar1" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav cl-effect-7">
+                        <a href="{% url 'home' %}" class="page-scroll">Home</a>
+                        <a href="#about" class="page-scroll">About</a>
+                        <a href="#posts" class="page-scroll">Newsfeed</a>
+                        <a href="#service" class="page-scroll">Events</a>
+                        <a href="#gallery" class="page-scroll">Gallery</a>
+                        <a href="{% url 'team' %}" class="page-scroll">Team</a>
+                        <a href="#contact" class="page-scroll">Contact</a>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+<!--End Hiding Navbar-->
+<!-- topbar -->
+<div class="topbar-w3ls">
+    <div class="container">
+        <a href="{% url 'home' %}" class="logo">
+            <h1>
+
+                <img class="img-responsive" style="height: 2em; width: auto; margin-top: -0.5em" align="left" src="{% static 'images/logo.png' %}"/>Microsoft Student Chapter
+                <!--<i class="fa fa-ship" aria-hidden="true"></i>    -->
+            </h1>
+        </a>
+        <!--<div class="top-agileits">
+            {% if not request.user.is_authenticated %}
+            <div class="top-w3l2">
+                <a data-toggle="modal" data-target="#login"><span class="glyphicon glyphicon-user"></span>
+                <p class="agileits1">Login/SignUp</p></a>
+            </div>
+            <div class="clearfix"></div>
+            {% endif %}
+            {% if user.is_authenticated%}
+
+            <div class="top-w3l2">
+                 <a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span>
+                <p class="agileits1">Welcome<br>{{ user.username }}</p>
+            </div>
+            <div class="clearfix"></div>
+            {% endif %}
+        </div>-->
+    </div>
+</div>
+<!-- /topbar -->
+<!-- navigation -->
+<div class="navbar-wrapper">
+    <div class="container">
+        <nav class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button style="float: right !important;" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav cl-effect-7">
+                        <!--<li class="active"><a href="{% url 'home' %}" class="page-scroll">Home</a></li>-->
+                        <li><a href="#about" class="page-scroll">About</a></li>
+                        <li><a href="#posts" class="page-scroll">Newsfeed</a></li>
+                        <li><a href="#service" class="page-scroll">Events</a></li>
+                        <li><a href="#gallery" class="page-scroll">Gallery</a></li>
+                        <li><a href="{% url 'team' %}" class="page-scroll">Team</a></li>
+                        <li><a href="{% url 'contact' %}" class="page-scroll">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- /navigation -->
+<!-- banner -->
+<section class="banner-w3ls">
+        <div id="block" data-vide-bg="{% static 'video/robot' %}" data-vide-options="position: 0% 50%">
+            <div class="overlay">
+                <a href="{% url 'hacktoberfest' %}"><img class="img-responsive" src="{% static 'hackt/logo.png' %}" style="align-items: center; padding-top: 11em;padding-left: 25%; width: 80%; height: auto"/></a>
+                <!--<h2><a href="/events/rumble">Rumble 2018</a><br></h2>-->
+                {% for i in heading_content %}
+                <h3>{{i.heading}}</a></h3>
+                <p>{{i.content}} </p>
+                {% endfor %}
+            </div>
+        </div>
+</section>
+<!-- /banner -->
+<!-- about -->
+<section class="about-wthree" id="about">
+    <div class="container">
+        <div class="col-lg-6 col-md-6 col-sm-12" data-aos="flip-right">
+            <h3 class="text-center">About Us</h3>
+            {% for i in about_us_content %}
+            {% if i.display %}
+            <p class="text-center">{{i.content}} </p>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12" data-aos="flip-left">
+            <ul class="grid cs-style-1">
+                <li>
+                    <!--<figure>-->
+                        <!--<img src="images/about-img2.jpg" alt="img01" class="img-responsive">-->
+                        <!--<figcaption>-->
+                            <!--<a href="images/about-img.jpg" class="lightninBox" data-lb-group="1">View More</a>-->
+                        <!--</figcaption>-->
+                    <!--</figure>-->
+                    <div class="w3-content w3-section">
+											{% for i in abt %}
+                        <figure><img class="mySlides" src="{{i.Img.url}}" style="height:25em; width: 40em;"></figure>
+                {% endfor %}
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</section>
+<!-- /about -->
+<!-- divider -->
+<section class="divider-wthree" id="posts">
+    <div class="container">
+        <h3 class="text-center" data-aos="zoom-in">Technical Post</h3>
+        <!--<p class="text-center" data-aos="zoom-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sem elit, finibus et egestas ut, condimentum ut neque.</p>-->
+
+        {% for blog in post|slice:":4" %}
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+            <div class="card card-inverse card-info">
+                <img class="card-img-top" src="{{blog.image.url}}">
+                <div class="card-block">
+                    <figure class="profile profile-inline">
+                        <img  src="{% static 'images/kunal.jpg' %}" class="profile-avatar avatar-small" alt="">
+                    </figure>
+                    <h3 class="card-title" style="color: whitesmoke">{{ blog.title }} <small style="font-size: 15px"><a href="#"></a>
+                    </small>
+                    <br><small style="font-size: 10px">{{ blog.timestamp}} </small></h3>
+                    <p class="card-text" style="color: #FFF;"> {{ blog.content|truncatechars:45}}</p>
+                    <a href="{% url 'detail' blog.id %}"><button class="btn btn-info float-right btn-sm">Read more</button></a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+    <h4 style="color: white; font-weight: bolder" class="text-right"><a href="{% url 'newsfeed' %}">View More&rarr;</a></h4>
+</section>
+<!-- /divider -->
+<!-- services -->
+<section class="service-agileinfo" id="service">
+    <div class="container">
+        <h3 class="text-center" data-aos="zoom-in">Our Events</h3>
+
+				{% for i in evnt %}
+        <div class="col-lg-4 col-md-4 col-sm-6" data-aos="flip-down">
+            {% if logo %}
+            <img src="{{i.logo.url}}" alt="" class="event-w3l1-img">
+            {% endif %}
+            <h4 class="text-center"><a href="{{i.url}}">{{i.heading}}</a></h4>
+            <p class="text-center">{{i.description}}</p>
+            <button type="button" class="btn btn-success center-block"><a href="{{i.url}}">Know More</a></button>
+        </div>
+				{% endfor %}
+
+        <div class="clearfix"></div>
+    </div>
+</section>
+<!-- /services -->
+<!-- gallery -->
+<section class="gallery-info" id="gallery">
+
+    <div class="container">
+        <h3 class="text-center" data-aos="zoom-in">Our Gallery</h3>
+
+        <ul class="clearfix demo">
+            {% for i in gall_img|slice:":8" %}
+            <li data-aos="flip-down"><img src={{ i.Image.url }} alt="" class="gallery-img"/></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <h4 style="color: white; font-weight: bolder" class="text-right"><a href="{% url 'gallery' %}">View More&rarr;</a></h4>
+</section>
+<!-- /gallery -->
+<!-- team -->
+<section class="team-w3" id="team">
+    <div class="container">
+        <h3 class="text-center">Meet Our Team</h3>
+        <div class="col-lg-3 col-md-3 col-sm-6 team-w3l1" data-aos="flip-right">
+            <img src="{% static 'images/rana.jpg' %}" alt="PS Rana" class="team-w3l1-img">
+            <h4>Dr. PS Rana</h4>
+            <h5>Mentor</h5>
+            <ul class="social-icons1">
+                <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fa fa-github"></i></a></li>
+                <li><a href="http://psrana.com/" target="_blank"><i class="fa fa-globe"></i></a></li>
+            </ul>
+        </div>
+				{% for i in core_team %}
+        <div class="col-lg-3 col-md-3 col-sm-6 team-w3l1" data-aos="flip-left">
+            <img src="{{ i.Image.url }}" alt="gen-sec" class="team-w3l1-img"/>
+            <br>
+            <h4>{{ i.name}}</h4>
+            <h5>{{i.get_post_display}}</h5>
+            <ul class="social-icons1">
+                <li><a href="{{i.linkedin_link}}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="{{i.git_link}}" target="_blank"><i class="fa fa-github"></i></a></li>
+                <li><a href="{{i.fb_link}}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+            </ul>
+        </div>
+				{% endfor %}
+            <div class="col-lg-3 col-md-3 col-sm-6 team-w3l2" data-aos="flip-left">
+                <a href="{% url 'team' %}"><img style="padding: 10px 10px;" src="{% static 'images/arrow.png' %}" alt="next" class="team-w3l1-img">
+                <h3 style="font-size: 25px" class="text-center"><a href="{% url 'team' %}">Visit Team Page</a></h3></a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</section>
+<!-- /team -->
+<!-- map -->
+<!--<section class="map-w3" data-aos="zoom-in">-->
+    <!--<iframe class="googlemaps" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d380510.6741687111!2d-88.01234121699822!3d41.83390417061058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1455598377120" style="border:0" allowfullscreen></iframe>-->
+<!--</section>-->
+<!-- /map -->
+<!-- contact -->
+<section class="contact-w3-agileits" id="contact">
+    <div class="container">
+        <h3 class="text-center" data-aos="zoom-in">Get In Touch</h3>
+        <div class="col-lg-4 col-md-4 contact-w3l1" data-aos="flip-right">
+            <h4>Subscribe to our newsletter</h4>
+            <div class="subscribe" id="subscribe">
+                <form>
+                    <div class="form-group1">
+                        <input class="form-control" id="email1" name="email1" placeholder="Enter Your Email Address" type="email" required>
+                    </div>
+                    <div class="form-group2">
+                        <div class="alert">We have received your request.Thankyou.</div>
+                        <button class="btn btn-outline btn-lg" type="submit">Subscribe</button>
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 contact-w3l1" data-aos="flip-right">
+        </div>
+        <div class="col-lg-6 col-md-6 contact-w3l2" data-aos="flip-left" id="contact1">
+          <h4>Email:&nbsp; msc@thapar.edu</h4>
+          <h4>Mobile:&nbsp; +91-9990954323<br>
+                            +91-8437592396</h4>
+            <!-- <form>
+                <div class="form-group col-md-4 col-sm-4">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required/>
+                </div>
+                <div class="form-group col-md-4 col-sm-4">
+                    <input type="email" class="form-control" id="email2" name="email2" placeholder="Your Email" required/>
+                </div>
+                <div class="form-group col-md-4 col-sm-4">
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Your Phone" required/>
+                </div>
+                <div class="clearfix"></div>
+                <div class="form-group col-md-12">
+                    <textarea class="form-control" rows="6" name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <div class="form-group col-md-12">
+                    <div class="alert">Your message has been sent.We will contact you soon!</div>
+                    <button type="submit" class="btn-outline2">Submit</button>
+                </div>
+                <!--<div class="clearfix"></div>-->
+            <!-- </form>  -->
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</section>
+{% endblock %}
+<!-- /contact -->
+<!-- footer -->
+{% block footer %}
+<section class="footer-w3-agileits">
+    <div class="container">
+        <div class="col-lg-8 col-md-8">
+            <ul class="w3-agile">
+                <li><a href="{% url 'home' %}" class="page-scroll">Home</a></li>
+                <li><a href="#about" class="page-scroll">About</a></li>
+                <li><a href="#posts" class="page-scroll">Posts</a></li>
+                <li><a href="#service" class="page-scroll">Services</a></li>
+                <li><a href="#gallery" class="page-scroll">Gallery</a></li>
+                <li><a href="#team" class="page-scroll">Team</a></li>
+                <li><a href="#contact" class="page-scroll">Contact</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-4 col-md-4">
+            <ul class="social-icons2">
+                <li><a href="https://www.facebook.com/msctiet/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://www.linkedin.com/company/13472709/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="mailto: msc@thapar.edu"><i class="fa fa-envelope"></i></a></li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+        <p class="text-center">&copy; 2018 Microsoft Student Chapter. All Rights Reserved | Design by <a href="{% url 'team' %}"> Team </a> | <a href="{% url 'privacy' %}">Privacy Policy</a></p>
+    </div>
+</section>
+
+
+<!-- /footer -->
+<!-- back to top -->
+<a href="#0" class="cd-top">Top</a>
+{% endblock %}
+<!-- /back to top -->
+<!-- js files -->
+<!-- js files -->
+<!--Navbar1 script-->
+{% block endjs %}
+<script src="{% static 'js/firebase.js' %}"></script>
+<script src="{% static 'js/firebase2.js' %}"></script>
+<script>
+    // When the user scrolls down 20px from the top of the document, slide down the navbar
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > screen.width/2 || document.documentElement.scrollTop > screen.width/2) {
+            document.getElementById("navbar1").style.top = "0";
+        }
+        else {
+            document.getElementById("navbar1").style.top = "-50px";
+        }
+    }
+</script>
+<!--End Navbar1-->
+<!--Corousal-->
+<script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}
+        x[myIndex-1].style.display = "block";
+        setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+</script>
+<!--End Corousal-->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/smoothscroll.js' %}"></script>
+<script src="{% static 'js/jquery.easing.min.js' %}"></script>
+<script src="{% static 'js/grayscale.js' %}"></script>
+<script src="{% static 'js/aos.js' %}"></script>
+<script src="{% static 'js/index.js' %}"></script>
+<!-- js for back to top -->
+<script src="{% static 'js/top.js' %}"></script>
+<!-- /js for back to top -->
+<!-- js for about lightbox -->
+<script src="{% static 'js/jQuery.lightninBox.js' %}"></script>
+<script type="text/javascript">
+    $(".lightninBox").lightninBox();
+</script>
+<!-- /js for about lightbox -->
+<!-- js for gallery -->
+<script src="{% static 'js/jquery.picEyes.js' %}"></script>
+<script>
+$(function(){
+    //picturesEyes($('li'));
+    $('ul.demo li').picEyes();
+});
+</script>
+<!-- /js for gallery -->
+<!-- js for banner -->
+<script src="{% static 'js/jquery.vide.js' %}"></script>
+<!-- /js for banner -->
+<!-- /js files -->
+{% endblock %}
+</body>
+</html>

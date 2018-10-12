@@ -1,0 +1,137 @@
+{% extends 'src/base.html' %}
+{% load staticfiles %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'dev/assets/css/main.css' %}" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+		#navbar {
+			background-color: #333;
+			position: fixed;
+			top: 0px;
+			width: 100%;
+			display:block;
+			transition: top 0.3s;
+			z-index: 500;
+		}
+		#navbar a {
+			float: left;
+			display: block;
+			color: #f2f2f2;
+			text-align: center;
+			padding: 10px;
+			text-decoration: none;
+			font-size: 17px;
+		}
+		#navbar a:hover {
+			background-color: #ddd;
+			color: black;
+		}
+	</style>
+	{% endblock %}
+
+{% block body%}
+
+			<!-- Nav -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'home' %}"><p><img src="{% static 'dev/assets/images/LogoM.png' %}" alt="Logo" height="30" width="30">Microsoft Student Chapter</p></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'newsfeed' %}">Newsfeed</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Events
+            <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'techmeet'%}">TECHMEET '18</a></li>
+          <li><a href="{% url 'registrations' %}">Recruitment 2018</a></li>
+          <!-- <li><a href="/events/rumble">Rumble</a></li> -->
+        </ul>
+      </li>
+        <li class="active"><a href="{% url 'gallery' %}">Gallery</a></li>
+				<li><a href="{% url 'team' %}">Team</a></li>
+				<li><a href="{% url 'contact' %}">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+			<!-- Main -->
+				<section id="main">
+
+
+
+					<!-- Gallery -->
+						<section id="galleries">
+
+							<!-- Photo Galleries -->
+								<div class="gallery">
+
+									<!-- Filters -->
+										<header>
+											<h1>Gallery</h1>
+											<ul class="tabs">
+												<li><a href="#" data-tag="all" class="button active">All</a></li>
+												<li><a href="#" data-tag="people" class="button">MS Week</a></li>
+												<li><a href="#" data-tag="place" class="button">Inspirus</a></li>
+												<li><a href="#" data-tag="thing" class="button">Rumble</a></li>
+											</ul>
+										</header>
+
+										<div class="content">
+											{% for i in msweek %}
+											<div class="media all people">
+												<a href="{{i.Image.url}}"><img src="{{i.Image.url}}" alt="" title="{{i.caption}}" /></a>
+											</div>
+											{% endfor %}
+
+											{% for i in inspirus %}
+											<div class="media all place">
+												<a href="{{i.Image.url}}"><img src="{{i.Image.url}}" alt="" title= "{{i.caption}}" /></a>
+											</div>
+											{% endfor %}
+
+											{% for i in rumble %}
+											<div class="media all thing">
+												<a href="{{i.Image.url}}"><img src="{{ i.Image.url }}" alt="" title="{{i.caption}}" /></a>
+											</div>
+											{% endfor %}
+
+										</div>
+								</div>
+						</section>
+
+
+						<footer>
+							<br><br><br><br>
+							<div class="footer content-1170 center-relative">
+								<p class="text-center">&copy; 2018 Microsoft Student Chapter. All Rights Reserved | Design by <a href="{% url 'team' %}">Team</a> | <a href="{% url 'privacy' %}">Privacy Policy</a></p>
+            				</div>
+        				</footer>
+
+							{% endblock %}
+
+
+		<!-- Scripts -->
+		{% block endjs %}
+
+			<script src="{% static 'dev/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'dev/assets/js/jquery.poptrox.min.js' %}"></script>
+			<script src="{% static 'dev/assets/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'dev/assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'dev/assets/js/util.js' %}"></script>
+			<script src="{% static 'dev/assets/js/main.js' %}"></script>
+
+		{% endblock %}
+
+	</body>
+</html>

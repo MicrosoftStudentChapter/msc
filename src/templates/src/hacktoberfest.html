@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <title>Hacktoberfest @TIET</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="{% static 'favicon/apple-icon-57x57.png' %}">
+<link rel="apple-touch-icon" sizes="60x60" href="{% static 'favicon/apple-icon-60x60.png' %}">
+<link rel="apple-touch-icon" sizes="72x72" href="{% static 'favicon/apple-icon-72x72.png' %}">
+<link rel="apple-touch-icon" sizes="76x76" href="{% static 'favicon/apple-icon-76x76.png' %}">
+<link rel="apple-touch-icon" sizes="114x114" href="{% static 'favicon/apple-icon-114x114.png' %}">
+<link rel="apple-touch-icon" sizes="120x120" href="{% static 'favicon/apple-icon-120x120.png' %}">
+<link rel="apple-touch-icon" sizes="144x144" href="{% static 'favicon/apple-icon-144x144.png' %}">
+<link rel="apple-touch-icon" sizes="152x152" href="{% static 'favicon/apple-icon-152x152.png' %}">
+<link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-icon-180x180.png' %}">
+<link rel="icon" type="image/png" sizes="192x192"  href="{% static 'favicon/android-icon-192x192.png' %}">
+<link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+<link rel="icon" type="image/png" sizes="96x96" href="{% static 'favicon/favicon-96x96.png' %}">
+<link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+<link rel="manifest" href="{% static 'favicon/manifest.json' %}">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="{% static 'favicon/ms-icon-144x144.png' %}">
+<meta name="theme-color" content="#ffffff">
+<style>
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #00bfff;
+  border: none;
+  color: #FFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttonN {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    position: relative;
+    right: 20%;
+}
+
+.button1:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.button2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#contact1 {
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  margin: 4em auto;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  background: teal;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+#contact1:hover { background: #666; }
+#contact1:active { background: #444; }
+
+#contactForm {
+  display: none;
+
+  border: 6px solid salmon;
+  padding: 2em;
+  width: 400px;
+  text-align: center;
+  background: #fff;
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%)
+
+}
+
+input, textarea {
+  margin: .8em auto;
+  font-family: inherit;
+  text-transform: inherit;
+  font-size: inherit;
+
+  display: block;
+  width: 280px;
+  padding: .4em;
+}
+textarea { height: 80px; resize: none; }
+
+.formBtn {
+  width: 140px;
+  display: inline-block;
+
+  background: teal;
+  color: #fff;
+  font-weight: 100;
+  font-size: 1.2em;
+  border: none;
+  height: 30px;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("#bt").show();
+    });
+});
+
+$(function() {
+
+  // contact form animations
+  $('#contact1').click(function() {
+    $('#contactForm').fadeToggle();
+  })
+  $(document).mouseup(function (e) {
+    var container = $("#contactForm");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        container.fadeOut();
+    }
+  });
+
+});
+</script>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'hackt/css/main.css' %}" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:600" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  </head>
+<body>
+
+
+<div class="land">
+  <center><img src="{% static 'hackt/assets/logo.png' %}" alt="hacktopber logo" style="width:100% ; height: 95%"/></center>
+  <div class="bottom" style="
+  position: absolute;
+  top: 100%;
+  left: 40%;">
+    <button class="button" style="vertical-align:middle"><span>Register</span></button><br>
+    <div id="bt" style="display: none">
+    <a href="{% url 'hacktober_form' %}"><button class="buttonN button1">Thaparian</button></a>
+    <a href="{% url 'hacktober_form2' %}"><button class="buttonN button2">Non Thaparian</button></a>
+  </div>
+  </div>
+</div>
+<div style="padding-top: 2em;">
+</div>
+<h2 style="text-align: center; color: whitesmoke">15-16th October, 2018.<br> Thapar Institute of Engineering and Technology, Patiala, Punjab.</h2>
+
+    <div class="timeline">
+        <div class="container left" data-aos="flip-up">
+          <div class="content">
+            <!-- <img src="{% static 'hackt/assets/pic-2.jpg' %}" alt="hacktopber logo" style="width:100% ; height: 95%"/> -->
+            <h2>Aptech Rumble <br> 15th October, TAN-Auditorium, TIET</h2>
+            <!-- <img src="{% static 'hackt/assets/youtube.png' %}" alt="hacktopber logo" style="width:50% ; height: auto"/> -->
+            <p>Aptech-Rumble is the mixed combination of coding and aptitude quiz. It is specially designed for freshers to programming, with the soul aim of improvising upon their technical and thinking skills. With some exciting prizes to go on upto 3000. </p>
+            </div>
+        </div>
+        <div class="timeline">
+            <div class="container right" data-aos="flip-up">
+              <div class="content">
+                <!-- <img src="{% static 'hackt/assets/pic-2.jpg' %}" alt="hacktopber logo" style="width:100% ; height: 95%"/> -->
+                <h2>Games of Codes <br> 15th October, Online Round.</h2>
+                <!-- <img src="{% static 'hackt/assets/youtube.png' %}" alt="hacktopber logo" style="width:50% ; height: auto"/> -->
+                <p>The online coding competitive coding competition. Its an year wise event, where your analytical and programming capabilities will be put to test, giving you a one time opportunity to stand out of the crowd and win prizes for the same.</p>
+                </div>
+        </div>
+            <div class="container left" data-aos="flip-up">
+              <div class="content">
+                <img src="{% static 'hackt/assets/pic-2.jpg' %}" alt="hacktopber logo" style="width:100% ; height: 95%"/>
+                <h2>Meet-Up: Hitesh Choudhary <br> 16th October, Main-Auditorium, TIET</h2>
+                <a href="https://www.youtube.com/user/hiteshitube" target="_blank"><img src="{% static 'hackt/assets/youtube.png' %}" alt="hacktopber logo" style="width:50% ; height: auto"/></a>
+                <p> The talk will be focused on adopting technology asap and not being dependent on the university. It would touch the subjects like tech and software, required in corporate, Cracking interview (My Amazon interview experience), portfolio and skill set. I will also discuss opportunities to work with giants like Google as a contractor<br>
+                <strong>Thapar Students are required to bring id cards</strong></p>
+              </div>
+            </div>
+            <div class="container right" data-aos="flip-up">
+              <div class="content">
+                <img src="{% static 'images/rana.jpg' %}" alt="PS Rana" style="width:auto; height: 10em"/>
+                <h2>Advances in Machine Learning: Dr. Prashant Singh Rana <br> 17th October, TAN-Building, TIET</h2>
+              <p> The talk will be focused on the recent trends in Machine Learning and Artificial Intelligence. The applications and future use case,
+                and how to contribute to the developments shall be discussed. All Q/A are welcomed. The speaker
+              is an estemeed faculty at the Computer Science Department of Thapar Institute.  </p>
+              </div>
+            </div>
+            <div class="container left" data-aos="flip-up">
+              <div class="content">
+                <!-- <img src="{% static 'images/rana.jpg' %}" alt="PS Rana" style="width:100% ; height: 95%"/> -->
+                <h2>Intoduction to OpenSource and JavaScript + Machine Learning for a social cause. <br> 17th October, TAN-Building, TIET</h2>
+              <p> This open source celebration is mainly aimed to help you to increase awareness and collaboration with <thead>
+                open-source community. JavaScript is an essential language, which is added as a bonus to the talk.<br>
+                Your study is not justified unless it is put to use for a cause. The meet-up will highlight the areas which require computation and are not yet explored. The knowledge of this will help you
+                to sieve through your interests and goals as a complete engineer.
+              </thead> </p>
+              </div>
+            </div>
+            <div class="container right" data-aos="flip-up">
+              <div class="content">
+                <!-- <img src="{% static 'images/rana.jpg' %}" alt="PS Rana" style="width:100% ; height: 95%"/> -->
+                <h2>Competition: Game of Codes<br> 25th October, CSED Labs, TIET</h2>
+              <p> Grip up your coding skills to participate in this <strong>Year Wise</strong> coding competition to win prizes upto INR 3000. All prizes are year wise and the question pattern will be accordingly. This competition is limited to students of Bachlors in Engineering programme only.
+              </thead> </p>
+              </div>
+            </div>
+            <!--<div class="container left" data-aos="flip-up">-->
+            <!--  <div class="content">-->
+            <!--    <img src="http://pluspng.com/img-png/bootstrap-logo-png-open-2000.png" alt="PS Rana" style="auto; height: 10em;"/>-->
+            <!--    <h2>Web Development with Bootstrap (with personalised hosting)<br> 30th October, TAN-Building, TIET</h2>-->
+            <!--  <p> Get your Website All-device ready with Bootstrap 3. Live Coding will be done, alongwith resources. The workshop will reach out to topics of basic HTML and CSS library. Some basic topics of JS will be touched to make your website feel good!!-->
+            <!--    We will get your website hosted on Github pages. <br>-->
+            <!--    <strong>Prequisites: None</strong>-->
+            <!--  </thead> </p>-->
+            <!--  </div>-->
+            <!--</div>-->
+            <!-- <div class="container right" data-aos="flip-up">
+              <div class="content">
+                <h2>2016</h2>
+                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+              </div>
+            </div>
+            <div class="container left" data-aos="flip-up">
+              <div class="content">
+                <h2>2015</h2>
+                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+              </div>
+            </div>
+            <div class="container right" data-aos="flip-up">
+              <div class="content">
+                <h2>2012</h2>
+                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+              </div>
+            </div>
+            <div class="container left" data-aos="flip-up">
+              <div class="content" >
+                <h2>2011</h2>
+                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+              </div>
+            </div>
+            <div class="container right" data-aos="flip-up">
+              <div class="content">
+                <h2>2007</h2>
+                <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+              </div>
+            </div> -->
+          </div>
+
+
+          <!-- <div id="contact1">Contact</div>
+
+          <div id="contactForm">
+
+            <h1>Keep in touch!</h1>
+            <small>I'll get back to you as quickly as possible</small> -->
+
+            <!-- <form method="post">
+              {% csrf_token%}
+              <input placeholder="Name" type="text" id="name" required />
+              <input placeholder="Email" type="email" id="email" required />
+              <input placeholder="Contact" type="text" id="contact" required />
+              <!-- <textarea placeholder="Comment"></textarea> -->
+              <!-- <input class="formBtn" type="submit" /> -->
+              <!-- <input class="formBtn" type="reset" /> -->
+            <!-- </form> -->
+          </div> -->
+
+
+  <footer class="footer">
+    <center>
+        <p><a href="https://www.facebook.com/msctiet/"><i class="fab fa-facebook-square" style="font-size:48px;color: #2b81d9"></i></a></p>
+        <p>Designed with <i class="fas fa-heart" style="font-size:20px;color:#000000;padding-bottom:0px;"></i> by <a href="https://www.instagram.com/nippun999/" style="text-decoration:none;">NIXI404</a></p>
+        <p>&copy; All Rights Reserved | 2018 Microsft Student Chapter</p>
+    </center>
+  </footer>
+    <script src="{% static 'hacckt/css/main.js' %}"></script>
+    <script>
+        AOS.init();
+      </script>
+</body>
+</html>

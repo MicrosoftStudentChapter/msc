@@ -1,0 +1,116 @@
+// Some variables to use later
+$button-width: 300px;
+$button-height: 70px;
+$button-border: 3px;
+$icon-padding: 5px;
+$icon-width: $button-height - ($icon-padding * 2);
+$ball-width: 18px;
+
+// Helper class to hide elements
+.hidden {
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+
+// Real button styles
+.download-button {
+  position: relative;
+  display: inline-block;
+  width: $button-width;
+  height: $button-height;
+  background-color: #2C2E2F;
+  border: none;
+  box-shadow: 0 0 0 $button-border #02D1FF; // This will be our 'border'
+  border-radius: 100px;
+  cursor: pointer;
+  transition: 1s width, 0.3s box-shadow;
+
+  // Remove the custom behavior in some browsers
+  &, &:focus {
+    padding: 0;
+    outline: none;
+  }
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  // Styles for the different states of the button
+  &:hover, &:active, &:focus {
+    box-shadow: 0 0 0 $button-border #02D1FF, 0 0 20px $button-border darken(#02D1FF, 20%);
+  }
+}
+
+
+
+// Button container
+.download-button-container {
+  // ...CODE...
+
+  // Following are the different states for the button: downloading, progressing and completed
+  // We have defined the states in the container to have access to all descendants in CSS
+
+  // Downloading: The download button has been pressed
+  &.downloading {
+    // ...CODE...
+  }
+
+  // Progressing: The progress starts
+  &.progressing {
+    // ...CODE...
+  }
+
+  // Completed: The progress ends
+  &.completed {
+    // ...CODE...
+  }
+}
+
+
+
+.button-ball {
+  left: 50%;
+  transition: none;
+  // CSS animations for the ball. All of them starts at the same time, so we need to take care of delays
+  animation:
+          ball-throw-up 0.5s ease-out forwards, // Throw up the ball for 0.5s
+          ball-throw-down 0.5s 0.5s ease-in forwards, // Wait 0.5 seconds (throw up), and throw down the ball for 0.5s
+          ball-rubber 1s forwards; // Move the ball like a rubber deformation during 1s (throw up + throw down)
+}
+
+// Throw up animation
+@keyframes ball-throw-up {
+  from {
+    transform: translate(-50%, 17.5px);
+  }
+  to {
+    transform: translate(-50%, -60px);
+    background-color: #00FF8D;
+  }
+}
+
+// Throw down animation
+@keyframes ball-throw-down {
+  from {
+    transform: translate(-50%, -60px);
+  }
+  to {
+    transform: translate(-50%, 80px);
+  }
+}
+
+// Rubber animation
+@keyframes ball-rubber {
+  from {
+    width: $ball-width;
+  }
+  25% {
+    width: $ball-width * 0.75;
+  }
+  50% {
+    width: $ball-width;
+  }
+  to {
+    width: $ball-width / 2;
+  }
+}

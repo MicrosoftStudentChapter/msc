@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+{% load staticfiles %}
+<html>
+	<head>
+    <title>Microsoft Student Chapter: SeCom</title>
+        <link rel="apple-touch-icon" sizes="57x57" href="{% static 'favicon/apple-icon-57x57.png' %}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{% static 'favicon/apple-icon-60x60.png' %}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{% static 'favicon/apple-icon-72x72.png' %}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{% static 'favicon/apple-icon-76x76.png' %}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{% static 'favicon/apple-icon-114x114.png' %}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{% static 'favicon/apple-icon-120x120.png' %}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{% static 'favicon/apple-icon-144x144.png' %}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{% static 'favicon/apple-icon-152x152.png' %}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-icon-180x180.png' %}">
+        <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'favicon/android-icon-192x192.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{% static 'favicon/favicon-96x96.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static 'favicon/manifest.json' %}">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="{% static 'favicon/ms-icon-144x144.png' %}">
+        <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Microsoft Student Chapter, Thapar Institute of Engineering and Technology, Technical Society, Thapar University" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="{% static 'secom/assets/css/main.css' %}" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<style>
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.imag {
+  display: block;
+  width: 300px;
+  height: 300px;
+  border-radius: 300px
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  width: 300px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+   border-radius: 300px
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  font-family: "Calibri";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.lft {
+    font-weight: 100;
+    text-align: left;
+
+}
+</style>
+
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<span class="logo"><img src="{% static 'secom/images/secomlogo.png' %}" alt="" width=270 height=270 /></span>
+						<b><h1>SeCom</h1></b>
+						<b><h3><p>A Cyber Security Community<br /><h3></b>
+
+
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+						    <li><a class="navbar-brand" href="{% url 'home' %}"><p><img src="{% static 'dev/assets/images/LogoM.png' %}" alt="Chicago" height="30" width="30">MICROSOFT STUDENT CHAPTER</p></a></li>
+							<li><a href="#intro" class="active">Introduction</a></li>
+							<li><a href="#first">Session</a></li>
+							<li><a href="#res">Resources</a></li>
+							<li><a href="#second">Active Contributors</a></li>
+							<li><a href="#cta">Vision</a></li>
+
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Introduction -->
+							<section id="intro" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2>Network Security</h2>
+										</header>
+										<p>Growth and progress is swift when we work together in sync. So here we are with an Initiative to develop a "Community" - based on mutual learning and development, by and for all those Network Security enthusiasts amidst us.
+<br>• Learn about network security according to a planned course that covers all aspects of security and contributions from the people of the community
+<br>• Get to know the real life applications of recent hacks.
+<br>• Learn more about Cryptography to be CTF ready.
+<br>• Android Hack, Beef XSS, Phishing,MITM attcks.
+Some of the topics to be taken up.
+<br>• DEF-CON
+<br>• Get the exposure to real life security issues and how to handle them and be safe.</p>
+
+
+							</section>
+
+
+
+						<!-- Second Section -->
+							<section id="first" class="main special">
+								<header class="major">
+									<h2>Session</h2>
+
+								</header>
+								<ul class="statistics">
+									<li class="style1">
+										<span class="icon fa-clock-o"></span>
+										<strong>Time</strong> 5:15 PM
+									</li>
+									<li class="style2">
+										<span class="icon fa-calendar"></span>
+										<strong>Date</strong> 29nd March'18
+									</li>
+									<li class="style3">
+										<span class="icon fa-map-marker"></span>
+										<strong>Venue</strong> T-105
+									</li>
+
+								</ul>
+
+
+			<section id="res" class="main special">
+
+								<header class="major">
+									<h2>Resources</h2>
+									<!-- Copy from here -->
+									<b><u><h3>Topics from Orientation</h3></u></b>
+									<ul>
+									<span class="lft">
+
+									<li><a href="http://r00tz-web-intro.appspot.com/rootz">Learn the web like a hacker</a>
+									<li><a href="https://xss-game.appspot.com">Practice XSS</a>
+									<li><a href="https://hackerone.com">Bug Bounty  (Blocked by Sophos)</a>
+									<li><a href="https://forum.bugcrowd.com/t/researcher-resources-how-to-become-a-bug-bounty-hunter/1102">Bug Bounty Blog</a>&nbsp&nbsp(<a href="https://www.bugcrowd.com">Bugcrowd</a>)
+									</span>
+									<hr>
+									<!-- till here -->
+								</header>
+
+							</section>
+
+
+							<!-- First Section -->
+							<section id="second" class="main special">
+								<header class="major">
+									<h2>Active Contributors</h2>
+								</header>
+								<ul class="features">
+									<li>
+										<div class="container">
+										<img src="{% static 'secom/images/himanshu.jpg' %}" alt="Avatar" class="imag">
+												<div class="overlay">
+												<div class="text">Himanshu Bansal</div>
+												</div>
+										</div>
+
+									</li>
+									<li>
+										<div class="container">
+										<img src="{% static 'secom/images/nippun.jpeg' %}" alt="Avatar" class="imag">
+												<div class="overlay">
+												<div class="text">Nippun Lakhani</div>
+												</div>
+										</div>
+									</li>
+									<li>
+										<div class="container">
+										<img src="{% static 'secom/images/piyush.jpeg' %}" alt="Avatar" class="imag">
+												<div class="overlay">
+												<div class="text">Piyush Aggarwal</div>
+												</div>
+										</div>
+									</li>
+
+									<li>
+										<div class="container">
+										<img src="{% static 'secom/images/rishabh.jpeg' %}" alt="Avatar" class="imag">
+												<div class="overlay">
+												<div class="text">Rishabh Sahni</div>
+												</div>
+										</div>
+									</li>
+									<li>
+										<div class="container">
+										<img src="{% static 'secom/images/anukriti.jpeg' %}" alt="Avatar" class="imag">
+												<div class="overlay">
+												<div class="text">Anukriti Garg</div>
+												</div>
+										</div>
+									</li>
+									<li>
+										<div class="container">
+										<img src="{% static 'secom/images/nikhil.jpeg' %}" alt="Avatar" class="imag">
+												<div class="overlay">
+												<div class="text">Nikhil Verma</div>
+												</div>
+										</div>
+									</li>
+								</ul>
+
+							</section>
+
+						<!-- Get Started -->
+							<section id="cta" class="main special">
+								<header class="major">
+									<h2>"HACKuna Matata"</h2>
+									<p>Creating aware digital citizens.</p>
+								</header>
+
+							</section>
+
+
+
+					</div>
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'secom/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'secom/assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'secom/assets/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'secom/assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'secom/assets/js/util.js' %}"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="{% static 'secom/assets/js/main.js' %}"></script>
+
+	</body>
+</html>

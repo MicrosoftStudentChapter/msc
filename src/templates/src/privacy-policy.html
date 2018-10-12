@@ -1,0 +1,274 @@
+{% extends 'src/base.html' %}
+{% load staticfiles %}
+
+   {% block css %}
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    Document Title
+    =============================================
+    -->
+    <title>Microsoft Student Chapter</title>
+    <!--
+    Favicons
+    =============================================
+    -->
+        <link rel="apple-touch-icon" sizes="57x57" href="{% static 'favicon/apple-icon-57x57.png' %}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'favicon/apple-icon-60x60.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'favicon/apple-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'favicon/apple-icon-76x76.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'favicon/apple-icon-114x114.png' %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'favicon/apple-icon-120x120.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'favicon/apple-icon-144x144.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'favicon/apple-icon-152x152.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-icon-180x180.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'favicon/android-icon-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'favicon/favicon-96x96.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'favicon/manifest.json' %}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{% static 'favicon/ms-icon-144x144.png' %}">
+    <meta name="theme-color" content="#ffffff">
+
+
+
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-8568203189953380",
+    enable_page_level_ads: true
+  });
+</script>
+
+
+
+
+
+    <!--
+    Stylesheets
+    =============================================
+
+    -->
+    <!-- Default stylesheets-->
+    <link href="{% static 'tan/assets/lib/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Template specific stylesheets-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="{% static 'tan/assets/lib/animate.css/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'tan/assets/lib/components-font-awesome/css/font-awesome.min.css' %}"  rel="stylesheet">
+    <link href="{% static 'tan/assets/lib/et-line-font/et-line-font.css ' %}" rel="stylesheet">
+    <link href="{% static 'tan/assets/lib/flexslider/flexslider.css' %}" rel="stylesheet">
+    <link href="{% static 'tan/assets/lib/owl.carousel/dist/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'tan/assets/lib/owl.carousel/dist/assets/owl.theme.default.min.css' %}" rel="stylesheet">
+    <link href="{% static 'tan/assets/lib/magnific-popup/dist/magnific-popup.css' %}" rel="stylesheet">
+    <link href="{% static 'tan/assets/lib/simple-text-rotator/simpletextrotator.css' %}" rel="stylesheet">
+    <!-- Main stylesheet and color file-->
+    <link href="{% static 'tan/assets/css/style.css' %}" rel="stylesheet">
+    <link id="color-scheme" href="{% static 'tan/assets/css/colors/default.css' %}" rel="stylesheet">
+
+
+    {% endblock %}
+    {% block body %}
+  <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+    <main>
+      <div class="page-loader">
+        <div class="loader">Loading...</div>
+      </div>
+      <nav class="navbar navbar-custom navbar-fixed-top navbar-inverse" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="{% url 'home' %}"><p><img src="{% static 'dev/assets/images/LogoM.png' %}" alt="Logo" height="15" width="30">Microsoft Student Chapter</p></a>
+          </div>
+          <div class="collapse navbar-collapse" id="custom-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="{% url 'home' %}">Home</a></li>
+                      <li><a href="{% url 'newsfeed' %} ">Newsfeed</a></li>
+                      <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Events
+            <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'techmeet'%}">TECHMEET '18</a></li>
+          <li><a href="{% url 'registrations' %}">Recruitment 2018</a></li>
+          <!-- <li><a href="/events/rumble">Rumble</a></li> -->
+        </ul>
+      </li>
+                      <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                      <li><a href="{% url 'team' %}">Team</a></li>
+                      <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!--<section class="home-section home-full-height bg-dark-30" id="home" data-background="{% static 'tan/assets/newimages/section-5.jpg">
+        <div class="video-player" data-property="{videoURL:'https://youtu.be/nmdQlFDsMU8', containment:'.home-section', startAt:0, mute:false, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:25}"></div>
+        <div class="video-controls-box">
+          <div class="container">
+            <div class="video-controls"><a class="fa fa-volume-up" id="video-volume" href="#">&nbsp;</a><a class="fa fa-pause" id="video-play" href="#">&nbsp;</a></div>
+          </div>
+        </div>
+        <div class="titan-caption">
+          <div class="caption-content">
+            <div class="font-alt mb-30 titan-title-size-1">Hello &amp; welcome</div>
+            <div class="font-alt mb-40 titan-title-size-4">News Feed</div>
+            <!-- <a class="section-scroll btn btn-border-w btn-round" href="#module">Learn More</a> -->
+          <!--</div>
+        </div>
+      </section>-->
+      <div class="main">
+
+      <div class="container" style="padding-left: 1.2">
+        <h1>Privacy Policy</h1>
+
+
+<p>Effective date: August 24, 2018</p>
+
+
+<p>Microsoft Student Chapter, TIET operates the <strong> <a href="https://www.msctiet.co.in">https://www.msctiet.co.in/</a> </strong>&nbsp; (the "Service").</p>
+
+<p>This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data. This Privacy Policy  for Microsoft Student Chapter, TIET is powered by <a href="https://www.freeprivacypolicy.com/free-privacy-policy-generator.php">FreePrivacyPolicy.com</a>.</p>
+
+<p>We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, accessible from https://www.msctiet.co.in/</p>
+
+
+<h2>Information Collection And Use</h2>
+
+<p>We collect several different types of information for various purposes to provide and improve our Service to you.</p>
+
+<h3>Types of Data Collected</h3>
+
+<h4>Personal Data</h4>
+
+<p>While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you ("Personal Data"). Personally identifiable information may include, but is not limited to:</p>
+
+<ul>
+<li>Email address</li><li>First name and last name</li><li>Phone number</li><li>Cookies and Usage Data</li>
+</ul>
+
+<h4>Usage Data</h4>
+
+<p>We may also collect information how the Service is accessed and used ("Usage Data"). This Usage Data may include information such as your computer's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
+
+<h4>Tracking & Cookies Data</h4>
+<p>We use cookies and similar tracking technologies to track the activity on our Service and hold certain information.</p>
+<p>Cookies are files with small amount of data which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device. Tracking technologies also used are beacons, tags, and scripts to collect and track information and to improve and analyze our Service.</p>
+<p>You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service.</p>
+<p>Examples of Cookies we use:</p>
+<ul>
+    <li><strong>Session Cookies.</strong> We use Session Cookies to operate our Service.</li>
+    <li><strong>Preference Cookies.</strong> We use Preference Cookies to remember your preferences and various settings.</li>
+    <li><strong>Security Cookies.</strong> We use Security Cookies for security purposes.</li>
+</ul>
+
+<h2>Use of Data</h2>
+
+<p>Microsoft Student Chapter, TIET uses the collected data for various purposes:</p>
+<ul>
+    <li>To provide and maintain the Service</li>
+    <li>To notify you about changes to our Service</li>
+    <li>To allow you to participate in interactive features of our Service when you choose to do so</li>
+    <li>To provide customer care and support</li>
+    <li>To provide analysis or valuable information so that we can improve the Service</li>
+    <li>To monitor the usage of the Service</li>
+    <li>To detect, prevent and address technical issues</li>
+</ul>
+
+<h2>Transfer Of Data</h2>
+<p>Your information, including Personal Data, may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from your jurisdiction.</p>
+<p>If you are located outside India and choose to provide information to us, please note that we transfer the data, including Personal Data, to India and process it there.</p>
+<p>Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.</p>
+<p>Microsoft Student Chapter, TIET will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of your data and other personal information.</p>
+
+<h2>Disclosure Of Data</h2>
+
+<h3>Legal Requirements</h3>
+<p>Microsoft Student Chapter, TIET may disclose your Personal Data in the good faith belief that such action is necessary to:</p>
+<ul>
+    <li>To comply with a legal obligation</li>
+    <li>To protect and defend the rights or property of Microsoft Student Chapter, TIET</li>
+    <li>To prevent or investigate possible wrongdoing in connection with the Service</li>
+    <li>To protect the personal safety of users of the Service or the public</li>
+    <li>To protect against legal liability</li>
+</ul>
+
+<h2>Security Of Data</h2>
+<p>The security of your data is important to us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p>
+
+<h2>Service Providers</h2>
+<p>We may employ third party companies and individuals to facilitate our Service ("Service Providers"), to provide the Service on our behalf, to perform Service-related services or to assist us in analyzing how our Service is used.</p>
+<p>These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.</p>
+
+
+
+<h2>Links To Other Sites</h2>
+<p>Our Service may contain links to other sites that are not operated by us. If you click on a third party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit.</p>
+<p>We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
+
+
+<h2>Children's Privacy</h2>
+<p>Our Service does not address anyone under the age of 18 ("Children").</p>
+<p>We do not knowingly collect personally identifiable information from anyone under the age of 18. If you are a parent or guardian and you are aware that your Children has provided us with Personal Data, please contact us. If we become aware that we have collected Personal Data from children without verification of parental consent, we take steps to remove that information from our servers.</p>
+
+
+<h2>Changes To This Privacy Policy</h2>
+<p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
+<p>We will let you know via email and/or a prominent notice on our Service, prior to the change becoming effective and update the "effective date" at the top of this Privacy Policy.</p>
+<p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+
+
+<h2>Contact Us</h2>
+<p>If you have any questions about this Privacy Policy, please contact us:</p>
+<ul>
+        <li>By email: <a href="mailto: msc@thapar.edu">msc@thapar.edu</a></li>
+            <li>By visiting this page on our website: <a href="https://www.msctiet.co.in/contact/">https://www.msctiet.co.in/contact/</a></li>
+
+        </ul>
+      </div>
+
+
+
+        <hr class="divider-d">
+        <footer class="footer bg-dark">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <footer class="w3-center w3-light-grey w3-padding-32">
+                  <p class="text-center">&copy; 2018 Microsoft Student Chapter. All Rights Reserved | Design by <a href="{% url 'team' %}"> Team </a> | <a href="{% url 'privacy' %}">Privacy Policy</a></p>
+                </footer>
+              </div>
+              <div class="col-sm-6">
+                <div class="footer-social-links"><a href="https://www.facebook.com/msctiet/" target="_blank"><i class="fa fa-facebook"></i></a><a href="https://www.linkedin.com/company/13472709/" target="_blank"><i class="fa fa-linkedin"></i></a><a href="mailto: msc@thapar.edu"><i class="fa fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+    </main>
+    {% endblock %}
+    <!--
+    JavaScripts
+    =============================================
+    -->
+    {% block endjs %}
+    <script src="{% static 'tan/assets/lib/jquery/dist/jquery.js' %}"></script>
+    <script src="{% static 'tan/assets/lib/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'tan/assets/lib/wow/dist/wow.js' %}"></script>
+    <script src="{% static 'tan/assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js' %}"></script>
+    <script src="{% static 'tan/assets/lib/isotope/dist/isotope.pkgd.js' %}"></script>
+    <script src="{% static 'tan/assets/lib/imagesloaded/imagesloaded.pkgd.js' %}"></script>
+    <script src="{% static 'tan/assets/lib/flexslider/jquery.flexslider.js' %}"></script>
+    <script src="{% static 'tan/assets/lib/owl.carousel/dist/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'tan/assets/lib/smoothscroll.js' %}"></script>
+    <script src="{% static 'tan/assets/lib/magnific-popup/dist/jquery.magnific-popup.js' %}"></script>
+    <script src="{% static 'tan/assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js' %}"></script>
+    <script src="{% static 'tan/assets/js/plugins.js' %}"></script>
+    <script src="{% static 'tan/assets/js/mains.js' %}"></script>
+
+    {% endblock %}

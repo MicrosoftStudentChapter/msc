@@ -1,0 +1,158 @@
+{% extends 'src/base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script>
+			jQuery(window).load(function(){
+			jQuery(".hameid-loader-overlay").fadeOut(500);
+			});
+		</script>
+		<noscript>
+			<style>.hameid-loader-overlay { display: none; } </style>
+		</noscript>
+
+        <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,700i,900|Montserrat:400,700|PT+Serif' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css"  href="{% static 'arj/css/clear.css' %}"/>
+        <link rel="stylesheet" type="text/css"  href="{% static 'arj/css/common.css' %}" />
+        <link rel="stylesheet" type="text/css"  href="{% static 'arj/css/font-awesome.min.css' %}"/>
+        <link rel="stylesheet" type="text/css"  href="{% static 'arj/css/carouFredSel.css' %}"/>
+        <link rel="stylesheet" type="text/css"  href="{% static 'arj/css/prettyPhoto.css' %}"/>
+        <link rel="stylesheet" type="text/css"  href="{% static 'arj/css/sm-clean.css' %}"/>
+        <link rel="stylesheet" type="text/css"  href="{% static 'arj/style.css' %}"/>
+
+        <!--[if lt IE 9]>
+                <script src="js/html5.js"></script>
+        <![endif]-->
+
+        <link rel="stylesheet" href="{% static 'dev/assets/css/main.css' %}" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+        #navbar {
+            background-color: #333;
+            position: fixed;
+            top: 0px;
+            width: 100%;
+            display:block;
+            transition: top 0.3s;
+            z-index: 500;
+        }
+        #navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        #navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+    </style>
+
+
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-8568203189953380",
+    enable_page_level_ads: true
+  });
+</script>
+{% endblock %}
+
+ {% block body %}
+    <body bgcolor="blue">
+		<div class="hameid-loader-overlay"></div>
+
+        <!-- Menu -->
+       <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{% url 'home' %}"><p><img src="{% static 'dev/assets/images/LogoM.png' %}" alt="Logo" height="30" width="30">Microsoft Student Chapter</p></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'newsfeed' %}">Newsfeed</a></li>
+        <li class="dropdown active">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Events
+            <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'techmeet'%}">TECHMEET '18</a></li>
+          <li><a href="{% url 'registrations' %}">Recruitment 2018</a></li>
+          <!-- <li><a href="/events/rumble">Rumble</a></li> -->
+        </ul>
+      </li>
+        <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                <li><a href="{% url 'team' %}">Team</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+        <!-- Home -->
+
+        <div id="home" class="section intro-page">
+            <div class="block content-1170 center-relative center-text">
+                <br>
+                <h1 class="big-title">Coming Soon....</h1><br>
+				<p class="title-desc">We've got a great number of events lined up coming your way very soon!<br><br>Keep visiting to stay updated on the latest news.</p>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <!-- Footer -->
+        <footer>
+            <br><br><br><br>
+
+            <div class="footer content-1170 center-relative">
+            <p class="text-center">&copy; 2018 Microsoft Student Chapter. All Rights Reserved | Design by <a href="{% url 'team' %}">Team</a> | <a href="{% url 'privacy' %}">Privacy Policy</a></p>
+                <ul>
+                    <li class="social-footer">
+                        <a href="https://www.facebook.com/msctiet/" target="_blank"><span class="fa fa-facebook"></span></a>
+                         <a href="https://www.linkedin.com/company/13472709/" target="_blank"><span class="fa fa-linkedin"></span></a>
+                        <a href="mailto: msc@thapar.edu" target="_blank"><span class="fa fa-envelope"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+
+        {% endblock %}
+
+
+       {% block endjs %}
+
+
+        <!--Load JavaScript-->
+        <script type="text/javascript" src="{% static 'arj/js/jquery.js '%}"></script>
+        <script type='text/javascript' src="{% static 'arj/js/jquery.sticky-kit.min.js'%}"></script>
+        <script type='text/javascript' src="{% static 'arj/js/jquery.smartmenus.min.js'%}"></script>
+        <script type='text/javascript' src="{% static 'arj/js/jquery.sticky.js'%}"></script>
+        <script type='text/javascript' src="{% static 'arj/js/jquery.dryMenu.js'%}"></script>
+        <script type='text/javascript' src="{% static 'arj/js/isotope.pkgd.js'%}"></script>
+        <script type='text/javascript' src="{% static 'arj/js/jquery.carouFredSel-6.2.0-packed.js'%}"></script>
+        <script type='text/javascript' src="{% static 'arj/js/jquery.mousewheel.min.js'%}"></script>
+        <script type='text/javascript' src="{% static 'arj/js/jquery.touchSwipe.min.js'%}"></script>
+        <script type='text/javascript' src="{% static 'arj/js/jquery.easing.1.3.js'%}"></script>
+        <script type='text/javascript' src="{% static 'arj/js/imagesloaded.pkgd.js'%}"></script>
+        <script type='text/javascript' src="{% static 'arj/js/jquery.prettyPhoto.js'%}"></script>
+        <script type='text/javascript' src="{% static 'arj/js/main.js'%}"></script>
+
+        {% endblock %}

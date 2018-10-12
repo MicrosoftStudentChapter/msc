@@ -1,0 +1,246 @@
+{% extends 'src/base.html' %}
+{% load staticfiles %}
+
+   {% block css %}
+
+<!--
+    <h1>New post</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+    </div> -->
+
+
+
+
+
+<!--
+<form method="post">{% csrf_token %}
+    {% for field in form %}
+        <div class="fieldWrapper">
+            {{ field.errors }}
+            {{ field.label_tag }}: {{ field }}
+        </div>
+    {% endfor %}
+    <p><input type="submit" value="Send message" /></p>
+</form> -->
+
+
+
+    <!--
+    Stylesheets
+    =============================================
+
+    -->
+    <!-- Default stylesheets-->
+    <link href="{% static 'tan/assets/lib/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Template specific stylesheets-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="{% static 'tan/assets/lib/animate.css/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'tan/assets/lib/components-font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'tan/assets/lib/et-line-font/et-line-font.css' %}" rel="stylesheet">
+    <link href="{% static 'tan/assets/lib/flexslider/flexslider.css' %}" rel="stylesheet">
+    <link href="{% static 'tan/assets/lib/owl.carousel/dist/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'tan/assets/lib/owl.carousel/dist/assets/owl.theme.default.min.css' %}" rel="stylesheet">
+    <link href="{% static 'tan/assets/lib/magnific-popup/dist/magnific-popup.css' %}" rel="stylesheet">
+    <link href="{% static 'tan/assets/lib/simple-text-rotator/simpletextrotator.css' %}" rel="stylesheet">
+    <!-- Main stylesheet and color file-->
+    <link href="{% static 'tan/assets/css/style.css' %}" rel="stylesheet">
+    <link id="color-scheme" href="{% static 'tan/assets/css/colors/default.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+  {% endblock %}
+
+  {% block body %}
+  <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+    <main>
+      <div class="page-loader">
+        <div class="loader">Loading...</div>
+      </div>
+      <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="{% url 'home' %}"><p><img src="{% static 'dev/assets/images/LogoM.png' %}" alt="Logo" height="30" width="30">Microsoft Student Chapter</p></a>
+          </div>
+          <div class="collapse navbar-collapse" id="custom-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="{% url 'home' %}">Home</a></li>
+                  <li><a href="{% url 'newsfeed' %}">Newsfeed</a></li>
+                      <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Events
+            <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'techmeet'%}">TECHMEET '18</a></li>
+          <li><a href="{% url 'registrations' %}">Recruitment 2018</a></li>
+          <!-- <li><a href="/events/rumble">Rumble</a></li> -->
+        </ul>
+      </li>
+                      <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                      <li><a href="{% url 'team' %}">Team</a></li>
+                      <li><a href="{% url 'contact' %}">Contact</a></li>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="main">
+        <section class="module" id="contact">
+          <div class="container" style="margin-top: -50px;">
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3">
+                <h1 class="module-title font-alt" style="font-family: 'Lora', serif; color: red;"><strong>REGISTRATIONS CLOSED</strong></h1>
+                <div class="module-subtitle font-serif"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-8">
+    <!--            <form role="form" method="post">{% csrf_token %}-->
+    <!--              <div class="form-group">-->
+    <!--                {{ field.errors }}-->
+    <!--                <label class="sr-only" for="name">Name</label>-->
+    <!--                <input class="form-control" type="text" id="name" name="name"  placeholder="Your Name" data-validation-required-message="Please enter your name." required/>-->
+
+    <!--                <p class="help-block text-danger"></p>-->
+    <!--              </div>-->
+
+
+    <!--              <div class="form-group">-->
+    <!--                {{ field.errors }}-->
+    <!--                <label class="sr-only" for="email">Email</label>-->
+    <!--                <input class="form-control" type="email" id="email" name="email" placeholder="Your Email"  data-validation-required-message="Please enter valid email." required/>-->
+
+    <!--                <p class="help-block text-danger"></p>-->
+    <!--              </div>-->
+
+    <!--              <div class="form-group">-->
+    <!--                {{ field.errors }}-->
+    <!--                <label class="sr-only" for="name">Roll Number</label>-->
+    <!--                <input class="form-control" type="number" id="roll_number" name="roll_number"  placeholder="Your Roll Number" data-validation-required-message="Please enter your name." required/>-->
+
+    <!--                <p class="help-block text-danger"></p>-->
+    <!--              </div>-->
+
+    <!--              <div class="form-group">-->
+    <!--                {{ field.errors }}-->
+    <!--                <label class="sr-only" for="contact">Contact</label>-->
+    <!--                <input class="form-control" type="number" id="contact" name="contact" placeholder="Contact Number(do not use +91)"  data-validation-required-message="Please enter valid contact number." required/>-->
+
+    <!--                <p class="help-block text-danger"></p>-->
+    <!--              </div>-->
+
+    <!--              <div class="form-group">-->
+    <!--                {{ field.errors }}-->
+    <!--                <label class="sr-only" for="year">Year</label>-->
+    <!--                <input class="form-control" type="text" id="year" name="year" placeholder="Current Year of study (1/2/3)"  data-validation-required-message="Please enter your year." required/>-->
+
+    <!--                <p class="help-block text-danger"></p>-->
+    <!--              </div>-->
+
+                      <!-- <div class="form-group">
+    <!--                    {{field.errors}}-->
+    <!--                    <label for="year">Select list:</label>-->
+    <!--                    <select class="form-control" id="year">-->
+    <!--                      {% for field in form.year %}-->
+    <!--                      <option value={{field.pk}}>{{field}}</option>-->
+    <!--                      {%endfor%}-->
+    <!--                    </select>-->
+
+    <!--                  </div> -->
+
+
+
+    <!--              <div class="container">-->
+    <!--              <div class="form-group"><h4><strong>Choose your option</strong></h3>-->
+    <!--                {{ field.errors }}-->
+    <!--                <label class="checkbox">-->
+    <!--  <input type="checkbox" id="a" name="a">Day Scholar-->
+    <!--</label>-->
+    <!--<label class="checkbox">-->
+    <!--  <input type="checkbox" id="b" name="b">Hostler-->
+    <!--</label>-->
+    <!--<label class="checkbox">-->
+    <!--  <input type="checkbox" id="c" name="c">Hackerrank Online: 27th March (Night)-->
+    <!--</label>-->
+    <!--<label class="checkbox">-->
+    <!--  <input type="checkbox" id="d" name="d">Mock ACM-ICPC: 27th March-->
+    <!--</label>-->
+    <!--<label class="checkbox">-->
+    <!--  <input type="checkbox" id="e" name="e">Django Workshop: 31st March-->
+    <!--</label>-->
+    <!--                <p class="help-block text-danger"></p>-->
+    <!--              </div>-->
+    <!--              </div>-->
+
+
+
+
+    <!--              <div class="text-center">
+    <!--                <button class="btn btn-block btn-round btn-d" id="cfsubmit" type="submit" onclick="myFunction(),2000" >Submit</button>-->
+    <!--              </div>-->
+    <!--            </form>-->
+                <div class="ajax-response font-alt" id="contactFormResponse"></div>
+              </div>
+
+              <div class="col-sm-4">
+                <div class="alt-features-item mt-xs-60">
+                  <h3 class="alt-features-title">August 29,2018<br>
+                  E-210/11/12, </h3>
+                  <div class="alt-features-icon"><span class="icon-map"></span></div>
+                  <h3 class="alt-features-title font-alt">Say Hello</h3>Email: msc@thapar.edu<br/>Phone: +91 8437593296
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="module-small bg-dark">
+
+
+
+        <hr class="divider-d">
+        <footer class="footer bg-dark">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <footer class="w3-center w3-light-grey w3-padding-32">
+                  <p>&copy; 2018 Microsoft Student Chapter. All Rights Reserved | Design by <a href="{% url 'team' %}"> Team </a> | <a href="{% url 'privacy' %}">Privacy Policy</a></p>
+                </footer>
+              </div>
+              <div class="col-sm-6">
+                <div class="footer-social-links"><a href="https://www.facebook.com/msctiet/" target="_blank"><i class="fa fa-facebook"></i></a><a href="https://www.linkedin.com/company/13472709/" target="_blank"><i class="fa fa-linkedin"></i></a><a href="mailto: msc@thapar.edu"><i class="fa fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+      </main>
+      {% endblock %}
+    <!--
+    JavaScripts
+    =============================================
+    -->
+    {% block endjs %}
+    <script>
+      function myFunction() {
+          alert("Submitted Successfully!");
+      }
+      </script>
+    <script src="{% static 'tan/assets/lib/jquery/dist/jquery.js' %}"></script>
+    <script src="{% static 'tan/assets/lib/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'tan/assets/lib/wow/dist/wow.js' %}"></script>
+    <script src="{% static 'tan/assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js' %}"></script>
+    <script src="{% static 'tan/assets/lib/isotope/dist/isotope.pkgd.js' %}"></script>
+    <script src="{% static 'tan/assets/lib/imagesloaded/imagesloaded.pkgd.js' %}"></script>
+    <script src="{% static 'tan/assets/lib/flexslider/jquery.flexslider.js"' %}></script>
+    <script src="{% static 'tan/assets/lib/owl.carousel/dist/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'tan/assets/lib/smoothscroll.js' %}"></script>
+    <script src="{% static 'tan/assets/lib/magnific-popup/dist/jquery.magnific-popup.js' %}"></script>
+    <script src="{% static 'tan/assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js' %}"></script>
+    <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDK2Axt8xiFYMBMDwwG1XzBQvEbYpzCvFU"></script>
+    <script src="{% static 'tan/assets/js/plugins.js' %}"></script>
+    <script src="{% static 'tan/assets/js/mains.js' %}"></script>
+   {% endblock %}
